@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Book Rapport</title>
+  
+  <link rel="stylesheet" href="{% static 'css/search.css' %}">
+
+</head>
+<body>
+  
+
+  <h1>Search for book here</h1>
+
+
+  <!-- <form> -->
+  <input type="text" id="search-bar" name="search-bar" placeholder="e.g. Title, Author, ISBN">
+  <input type="button" id="search-button" value="Search">
+  <!-- </form> -->
+
+  <section class="media book showcase">
+    <header>
+      <h3 class="title"></h3>
+      <h4 class="author"></h4>
+    </header>
+
+    <img src="" alt="" class="thumbnail" />  
+      
+  </section>
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+
+
+</body>
+</html>
