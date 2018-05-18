@@ -1,14 +1,39 @@
-<h1>{{ question.question_text }}</h1>
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Book Rapport</title>
+  
+  <link rel="stylesheet" href="{% static 'css/search.css' %}">
 
-{% if error_message %}<p><strong>{{ error_message}}</strong></p>{% endif %}
+</head>
+<body>
+  
+  <h1>Which book did you read?</h1>
+  
+  <!-- Search bar -->
+  <div>
+    <input type="text" id="search-bar" name="search-bar" placeholder="e.g. Title, Author, ISBN">
+    <input type="button" id="search-button" value="Search">
+  </div>
+  
+  <br><br>
+  
+  <!-- Book search results -->
+  <div>
+    <section class="books">
+    </section>
+  </div>
 
 
-<form action="{% url 'book_rapport:vote' question.id %}" method="post">
-{% csrf_token %}
-{% for choice in question.choice_set.all %}
-	<input type="radio" name="choice" id="choice{{ forloop.counter}}" value="{{ choice.id }}" />
-	<label for="choice{{ forloop.counter}}">{{ choice.choice_text }}</label><br>
-{% endfor %}
 
-<input type="submit" value="Vote" />
-</form>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+
+
+</body>
+</html>
