@@ -14,6 +14,6 @@ def index(request):
     return render(request, 'shelves/index.html', context)
 
 
-def book_add(request):
+def book_search(request):
     book = get_object_or_404(Book)
-    return render(request, 'shelves/book_add.html', {'book':book})
+    return render(request, 'shelves/book_search.html', {'book':book})

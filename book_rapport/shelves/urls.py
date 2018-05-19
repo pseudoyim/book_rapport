@@ -6,8 +6,8 @@ app_name = 'shelves'
 urlpatterns = [
 	path('', views.index, name='index'),
 	
-	# book_add
-	path('book_add.html', views.book_add, name='book_add')
+	# book_search
+	path('book_search.html', views.book_search, name='book_search')
 
 
 
