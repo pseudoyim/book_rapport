@@ -10,7 +10,6 @@
 
 <body>
 
-
   <nav class="navbar navbar-default navbar-fixed-top">
 
     <div class="container"> 
@@ -22,7 +21,7 @@
           <span class="icon-bar"></span>
         </button>
         <a href="#" class="navbar-brand">
-          <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> IMGS
+          <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Book Rapport
         </a>
       </div>
 
@@ -41,44 +40,40 @@
   </nav>
 
 
+  <div class="container"> 
+    <div class="row">
 
-  <h1>Add Book</h1>
+      <div class="col-lg-8 col-sm-6">
+        <h1>Add Book</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+      </div>
 
-  <form method="POST">
-      {% csrf_token %}
-      {{ form.as_ul }}
-      <input type="submit" value="Submit">
-  </form>
+      <div class="col-lg-4 col-sm-6">
+        <h1>Book Search</h1>
+        <!-- Search bar -->
+        <div>
+          <input type="text" id="search-bar" name="search-bar" placeholder="e.g. Title, Author, ISBN">
+          <input type="button" id="search-button" value="Search">
+        </div>
+        <br><br>
+        <!-- Book search results -->
+        <div>
+          <section class="books">
+          </section>
+        </div>
+      </div>
 
-
-
-
-
-
-  <h1>Book Search</h1>
-    
-  <!-- Search bar -->
-  <div>
-    <input type="text" id="search-bar" name="search-bar" placeholder="e.g. Title, Author, ISBN">
-    <input type="button" id="search-button" value="Search">
+    </div>
   </div>
 
-  <br><br>
-
-
-  <!-- Book search results -->
-  <div>
-    <section class="books">
-    </section>
-  </div>
-
-
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script type="text/javascript" src="{% static 'js/book_search.js' %}"></script>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static 'js/add_read.js' %}"></script>
 
 </body>
 </html>
